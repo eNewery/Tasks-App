@@ -5,7 +5,8 @@ import TaskForm from './assets/TaskForm';
 import TaskList from './assets/TaskList';
 function App() {  
   return (
-    <div className="container">
+    <div className="bg-zinc-900 h-screen text-white">
+      <div className='flex items-center justify-center h-full'>
       <BrowserRouter>
 <Routes>
 <Route path='/' element={<TaskList/>}/>
@@ -13,6 +14,7 @@ function App() {
 <Route path='/edit-task/:id' element={<TaskForm/>}/>
 </Routes>
       </BrowserRouter>
+      </div>
     </div>
   );
 }

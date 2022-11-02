@@ -43,17 +43,20 @@ if (params.id) {
     setTask(tasks.find(task => task.id === params.id))
 
 }
-}, [])
+}, [params.id, tasks])
 
   return (
-    <form className='task-form' onSubmit={handleSubmit}>
+    <form className='bg-zinc-800 max-w-sm p-4' onSubmit={handleSubmit}>
+        <label className='mb-2 block text-xs font-bold' htmlFor="title">Task:</label>
         <input
         onChange={handleChange}
         placeholder="Title"
         name="title" 
         type="text" 
         value={task.title}
+        className="w-full p-2 rounded-md bg-zinc-600 mb-2"
         />
+        <label htmlFor="description" className='mb-2 block text-xs font-bold'>Description:</label>
         <textarea
         onChange={handleChange} 
         placeholder="Description" 
@@ -61,9 +64,10 @@ if (params.id) {
         cols="30" 
         rows="10"
         value={task.description}
+        className="w-full p-2 rounded-md bg-zinc-600 mb-2"
         >
         </textarea>
-        <input type="submit" />
+        <button type="submit">Enviar</button>
     </form>
   )
 }
